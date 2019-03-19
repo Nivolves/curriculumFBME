@@ -23,6 +23,25 @@ app.use(cookieParser());
 app.use(fileUpload());
 app.use('/data', express.static(__dirname + '/data'));
 
+function csvToJson() {
+  const results = [];
+
+  let walker = walk.walk('./data', { followLinks: false });
+
+  walker.on('file', function (root, stat, next) {
+    next();
+    let filename = `${stat.name}`;
+
+    fs.createReadStream(`./data/${filename}`)
+      .pipe(csv())
+      .on('data', (data) => results.push(data))
+      .on('end', () => {
+        let filenameJSON = `${stat.name}`.slice(0, -4);
+        const data = JSON.stringify(results);
+        fs.writeFileSync(`./json/${filenameJSON}.json`, data);
+      });
+  });
+}
 
 app.post('/upload', (req, res, next) => {
   let file = req.files.file;
@@ -31,8 +50,17 @@ app.post('/upload', (req, res, next) => {
     if (err) {
       return res.status(500).send(err);
     }
-
+    if (req.files.file.name.substr(req.files.file.name.length - 3) !== "csv") {
+      fs.unlinkSync(`./data/${req.files.file.name}`);
+      return res.status(415).send(err);
+    }
+    if (req.files.file.name.slice(0, -4).length !== 5) {
+      fs.unlinkSync(`./data/${req.files.file.name}`);
+      return res.status(406).send(err);
+    }
     res.json({ file: `data/${req.files.file.name}` });
+
+    csvToJson();
   });
 
 })
@@ -57,20 +85,4 @@ app.listen(8000, () => {
 
 module.exports = app;
 
-const results = [];
 
-let walker = walk.walk('./data', { followLinks: false });
-
-walker.on('file', function (root, stat, next) {
-  next();
-  let filename = `${stat.name}`;
-
-  fs.createReadStream(`./data/${filename}`)
-    .pipe(csv())
-    .on('data', (data) => results.push(data))
-    .on('end', () => {
-      let filenameJSON = `${stat.name}`.slice(0, -4);
-      const data = JSON.stringify(results);
-      fs.writeFileSync(`./json/${filenameJSON}.json`, data);
-    });
-});

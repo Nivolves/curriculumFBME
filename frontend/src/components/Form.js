@@ -13,11 +13,9 @@ const Form = () => {
       method: 'POST',
       body: data,
     })
-    // .then((response) => {
-    //   response.json().then((body) => {
-    //     console.log(body);
-    //   });
-    // });
+      .then((response) => {
+        console.log(response);
+      });
     fileInput.current.value = null;
   }
 
