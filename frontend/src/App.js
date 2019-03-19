@@ -1,10 +1,10 @@
 import React from 'react';
-import Main from './components/Main';
+import Form from "./components/Form";
 
 const App = () => (
   <div>
     <h1>File Upload</h1>
-    <Main />
+    <Form />
   </div>
 );
 

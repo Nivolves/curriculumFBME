@@ -25,7 +25,6 @@ app.use('/data', express.static(__dirname + '/data'));
 
 
 app.post('/upload', (req, res, next) => {
-  console.log(req);
   let file = req.files.file;
 
   file.mv(`${__dirname}/data/${req.files.file.name}`, function (err) {
