@@ -1,0 +1,46 @@
+#file {
+  display: block;
+  margin: 0 auto;
+}
+
+#file:active {
+  outline: none;
+}
+
+#file::-webkit-file-upload-button {
+  border: 2px dashed var(--submit-color);
+  background-color: var(--form-color);
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+label {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+
+.load {
+  color: var(--submit-color);
+}
+
+.not_load {
+  color: red;
+}
+
+.form_button {
+  cursor: pointer;
+  display: block;
+  margin: 30px auto;
+  padding: 15px 40px;
+  border: none;
+  background-color: var(--btn-color);
+  font-size: 16px;
+  color: var(--white-color);
+  border-radius: .25rem;
+  outline: none;
+}

@@ -1,5 +1,16 @@
 body {
+  --auth-color: #293c5e;
+  --form-color: honeydew;
+  --submit-color: #00FF00;
+  --btn-color: #28a745;
+  --white-color: #fff;
+  min-width: 320px;
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
+*{
+  box-sizing: border-box;
+}
+
