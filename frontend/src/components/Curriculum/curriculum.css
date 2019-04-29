@@ -1,0 +1,92 @@
+table {
+  border-spacing: 0px;
+}
+
+th {
+  font-size: 14px;
+  padding: 5px 10px;
+  border: 1px solid var(--auth-color);
+  border-left: none;
+}
+
+td {
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid var(--auth-color);
+  border-left: none;
+  border-top: none;
+}
+
+tr td:first-child,  tr th:first-child{
+  border-left: 1px solid var(--auth-color);
+}
+
+.course {
+  padding: 20px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.curriculum-container {
+  max-width: var(--container);
+  margin: 40px auto;
+}
+
+.plan-container {
+  display: flex;
+  padding-top: 10px;
+  border: 1px solid var(--auth-color);
+  border-radius: 3px 3px 0 0;
+}
+
+.spec-plan-container {
+  display: inline-block;
+  margin: 30px auto;
+  overflow: auto;
+}
+
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.tab-active {
+  z-index: 10;
+  margin-bottom: -1px;
+  border: 1px solid var(--auth-color);
+  border-radius: 3px 3px 0 0;
+  border-bottom: none;
+  background-color: var(--white-color);
+  font-weight: 700;
+}
+
+.tabs-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.vertical-long-text  {
+  display: flex;
+  width: .7em;
+  margin: auto 5px;
+  word-wrap: break-word;
+}
+
+.vertical-long-text-container {
+  display: flex;
+}
+
+.vertical-text {
+  width: .7em;
+  word-wrap: break-word;
+}
+
+@media only screen and (max-width: 768px){
+  .tab-active {
+    border: none;
+  }
+
+  .tabs-container {
+    flex-direction: column;
+  }
+}

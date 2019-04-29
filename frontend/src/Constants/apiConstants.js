@@ -1,0 +1,2 @@
+export const BASE_PATH = "http://localhost:8000";
+export const SPECIALTIES = [ { number: 122, name: "Комп'ютерні науки" }, { number: 152, name: "Метрологія" }, { number: 163, name: "Біомедична інженерія" }, { number: 227, name: "Фізична реабілітація" } ];
