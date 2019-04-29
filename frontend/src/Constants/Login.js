@@ -1,2 +1,2 @@
-export const LOGIN = "1";
-export const PASSWORD = "1";
+export const LOGIN = "FBMEadmin";
+export const PASSWORD = "FBME2019";

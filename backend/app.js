@@ -74,6 +74,18 @@ app.get( "/122", ( req, res ) => {
   res.send( parceJson( "122" ) );
 } );
 
+app.get( "/152", ( req, res ) => {
+  res.send( parceJson( "152" ) );
+} );
+
+app.get( "/163", ( req, res ) => {
+  res.send( parceJson( "163" ) );
+} );
+
+app.get( "/227", ( req, res ) => {
+  res.send( parceJson( "227" ) );
+} );
+
 app.post( '/upload', ( req, res, next ) => {
   let file = req.files.file;
 
