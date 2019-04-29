@@ -1,6 +1,5 @@
 const csv = require( 'csv-parser' )
 const fs = require( 'fs' )
-const walk = require( 'walk' );
 const express = require( 'express' );
 const path = require( 'path' );
 const logger = require( 'morgan' );
