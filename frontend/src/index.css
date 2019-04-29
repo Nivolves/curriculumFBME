@@ -4,9 +4,11 @@ body {
   --submit-color: #00FF00;
   --btn-color: #28a745;
   --white-color: #fff;
+  --container: 1400px;
   min-width: 320px;
   margin: 0;
   padding: 0;
+  color: var(--auth-color);
   font-family: sans-serif;
 }
 
