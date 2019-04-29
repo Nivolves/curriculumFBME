@@ -1,9 +1,8 @@
 import React, { Fragment } from "react";
 
-const App = ( { children } ) => (
+const Curriculum = () => (
   <Fragment>
-    {children}
   </Fragment>
 );
 
-export default App;
+export default Curriculum;
