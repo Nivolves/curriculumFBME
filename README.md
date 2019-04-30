@@ -3,7 +3,7 @@
 
 This application is created for the Faculty of Biomedical Engineering.
 
-For start you should run projects in the backend and frontend folder with the command "npm start".
+For start you should run projects in the backend and frontend folder with the commands "npm i" & "npm start".
 
 add / admin to search bar to go to admin panel.
 
